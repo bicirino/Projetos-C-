@@ -1,10 +1,13 @@
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-// Calculadora que calcula taxa metabÛlica basal e sugere opÁıes de macronutrientes e suas respectivas estratÈgias 
+setlocale (LC_ALL, "Portuguese"); 
+// Calculadora que calcula taxa metab√≥lica basal e sugere op√ß√µes de macronutrientes e suas respectivas estrat√©gias 
 
 int unidade; 
 
@@ -20,7 +23,7 @@ float fator;
 
 
 
-printf ("Seja bem-vindo a calculadora de taxa metabÛlica basal e ao organizador de macronutrientes alimentares \n  ");
+printf ("Seja bem-vindo √† calculadora de taxa metab√≥lica basal e ao organizador de macronutrientes alimentares \n  ");
 
 printf("Qual tipo de unidade deseja usar ?:  \n");
 
@@ -43,12 +46,12 @@ switch (unidade){
 	   printf("Digite sua altura (cm's) :  \n");
 	   scanf ("%i", &altura);
 	   
-	   printf("Digite seu nÌvel de atividade fÌsicas semanais:   \n");
-	   printf("Digite 1 - para SEDENTARIOS (pouco ou nenhum exercÌcio semanal ) \n "); 
-	   printf("Digite 2 - para LEVEMENTE ATIVO (exercicio leve 1 a 3 dias por semana)\n"); 
-	   printf("Digite 3 - para MODERADAMENTE ATIVO (exercicio moderado ou esportes 3 a 5 dias por semana)\n"); 
-	   printf("Digite 4 - para ALTAMENTE ATIVO (exercicio pesado ou esportes 5 a 6 dias por semana)\n"); 
-	   printf("Digite 5 - para EXTREMAMENTE ATIVO (exercicio pesado ou esportes todo dia ou ate 2 vezes ao dia )\n"); 
+	   printf("Digite seu n√≠vel de atividade f√≠sicas semanais:   \n");
+	   printf("Digite 1 - para SEDENT√ÅRIOS (pouco ou nenhum exerc√≠cio semanal ) \n "); 
+	   printf("Digite 2 - para LEVEMENTE ATIVO (exerc√≠cio leve 1 a 3 dias por semana)\n"); 
+	   printf("Digite 3 - para MODERADAMENTE ATIVO (exerc√≠cio moderado ou esportes 3 a 5 dias por semana)\n"); 
+	   printf("Digite 4 - para ALTAMENTE ATIVO (exerc√≠cio pesado ou esportes 5 a 6 dias por semana)\n"); 
+	   printf("Digite 5 - para EXTREMAMENTE ATIVO (exerc√≠cio pesado ou esportes todo dia ou ate 2 vezes ao dia )\n"); 
 	   scanf ("%i", &atividades );
 	   
 	   switch (atividades){
@@ -73,7 +76,7 @@ switch (unidade){
 	       break; 
 		 
 		 default: 
-		   printf ("Valor nao reconhecido, tente novamente");
+		   printf ("Valor n√£o reconhecido, tente novamente");
 		   break; 
 		 
 		
@@ -84,88 +87,92 @@ switch (unidade){
 	    
 	    int taxamulher = 655 + (9.6*peso)+(1.8*altura)-(4.7*idade);
 	    int taxafinalmulher = (taxamulher*fator);
+		int escolhabulk; 
+	    int escolhacut;
+	        
+		int quantidadecarbsujo = (taxamet*0.5)/4;
+	    int quantidadecarbmod = (taxamet*0.35)/4;    // Carboidratos Bulking 
+	    int quantidadecarblow = (taxamet*0.2)/4;
+			  
+		int quantidadeprotsujo = (taxamet*0.3)/4; 
+		int quantidadeprotmod = (taxamet*0.3)/4;     // Proteinas Bulking 
+		int quantidadeprotlow = (taxamet*0.4)/4; 
+			  
+		int quantidadegordsujo =(taxamet*0.2)/9;
+		int quantidadegordmod = (taxamet*0.35)/9;   // Gorduras Bulking 
+		int quantidadegordlow = (taxamet*0.4)/9;
+			  
+		int quantidadecaloriacut = (taxamet-500);
+			  
+		int quantidadecarbcut = (quantidadecaloriacut*0.35)/4;          // Macronutrietes do Cutting 
+		int quantidadeprotcut = (quantidadecaloriacut*0.3)/4;
+		int quantidadegordcut = (quantidadecaloriacut*0.35)/4;
+		
 		
 		switch (genero){
 		  case 1: 
-		    printf ("taxa metabolica = %i kcal por dia \n  ", taxamet); 
+		    printf ("taxa metab√≥lica = %i kcal por dia \n  ", taxamet); 
 		    printf ("------------------------------------------------------------------------------  \n ");
 		    
 		    
 		    int estrategiadieta;  
 		
-	        printf  ( "VocÍ deseja fazer um Bulking (ganho de massa) ou um Cutting (perda de massa) ?: \n ");
+	        printf  ( "Voc√™ deseja fazer um Bulking (ganho de massa) ou um Cutting (perda de massa) ?: \n ");
 	        printf ("Digite 1 - para BULKING \n ");
 	        printf ("Digite 2 - para CUTTING \n "); 
 	        scanf ("%i", &estrategiadieta);
+	        fflush (stdin); 
 	
-	        int escolhabulk; 
-	        int escolhacut;
-	        switch (estrategiadieta){
+	    
+			switch (estrategiadieta){
 	          case 1: 
-	          
+	           printf ("Voce deseja fazer um bulking SUJO(ganho rapido de massa porem com mais gordura), MODERADO (ganho de massa e gordura moderados) ou BAIXO (ganho de massa mais lento porem com menos gorduras) \n ");
 	   
-	          printf ("Voce deseja fazer um bulking SUJO(ganho rapido de massa porem com mais gordura), MODERADO (ganho de massa e gordura moderados) ou BAIXO (ganho de massa mais lento porem com menos gorduras) \n ");
-	   
-	          printf ("Digite 1 - para SUJO \n ");
-	          printf ("Digite 2 - para MODERADO \n ");
-	          printf ("Digite 3 - para BAIXO \n ");
-	          scanf("%i",&escolhabulk);
+	           printf ("Digite 1 - para SUJO \n ");
+	           printf ("Digite 2 - para MODERADO \n ");
+	           printf ("Digite 3 - para BAIXO \n ");
+	           scanf("%i",&escolhabulk);
+	           fflush (stdin); 
 	          
-	          int quantidadecarbsujo = (taxamet*0.5)/4;
-	          int quantidadecarbmod = (taxamet*0.35)/4;    // Carboidratos Bulking 
-	          int quantidadecarblow = (taxamet*0.2)/4;
+	          
 			  
-			  int quantidadeprotsujo = (taxamet*0.3)/4; 
-			  int quantidadeprotmod = (taxamet*0.3)/4;     // Proteinas Bulking 
-			  int quantidadeprotlow = (taxamet*0.4)/4; 
-			  
-			  int quantidadegordsujo =(taxamet*0.2)/9;
-			  int quantidadegordmod = (taxamet*0.35)/9;   // Gorduras Bulking 
-			  int quantidadegordlow = (taxamet*0.4)/9;
-			  
-			  int quantidadecaloriacut = (taxamet-500);
-			  
-			  int quantidadecarbcut = (quantidadecaloriacut*0.35)/4;          // Macronutrietes do Cutting 
-			  int quantidadeprotcut = (quantidadecaloriacut*0.3)/4;
-			  int quantidadegordcut = (quantidadecaloriacut*0.35)/4;
-			  
-			   switch (escolhabulk){
-	            case 1: 
-	             printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarbsujo);
-	             printf ("Voce deve ingerir %i g de proteina \n ", quantidadeprotsujo);
-	             printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordsujo);
-	             printf ("------------------------------------------------------------------------------ \n ");
-	            break; 
+			     switch (escolhabulk){
+	               case 1: 
+	                printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarbsujo);
+	                printf ("Voce deve ingerir %i g de proteina \n ", quantidadeprotsujo);
+	                printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordsujo);
+	                printf ("------------------------------------------------------------------------------ \n ");
+	                break; 
 	             
-	            case 2: 
-	             printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarbmod);
-	             printf ("Voce deve ingerir %i g de proteina\n ", quantidadeprotmod);
-	             printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordmod);
-	             printf ("------------------------------------------------------------------------------ \n ");
-	            break; 
+	               case 2: 
+	                printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarbmod);
+	                printf ("Voce deve ingerir %i g de proteina\n ", quantidadeprotmod);
+	                printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordmod);
+	                printf ("------------------------------------------------------------------------------ \n ");
+	                break; 
 	            
-	            case 3: 
-	             printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarblow);
-	             printf ("Voce deve ingerir %i g de proteina \n ", quantidadeprotlow);
-	             printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordlow);
-	             printf ("------------------------------------------------------------------------------ \n ");
-	            break; 
+	               case 3: 
+	                printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarblow);
+	                printf ("Voce deve ingerir %i g de proteina \n ", quantidadeprotlow);
+	                printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordlow);
+	                printf ("------------------------------------------------------------------------------ \n ");
+	                break; 
 	             
-	            default: 
-	             printf ("Erro");
-	            break; 
-	             
-	        }
+	               default: 
+	                printf ("Erro");
+	                break; 
+	            break;  
+	                }
 	  
 	  
 		    case 2: 
-			 printf ("Os macronutrientes refletir„o um deficit de 500 calorias - o que seria um cutting saudavel sem perda de massa magra \n ");
+			 printf ("Os macronutrientes refletir√£o um deficit de 500 calorias - o que seria um cutting saudavel sem perda de massa magra \n ");
 			 printf ("Voce deve ingerir cerca de %i kcal  \n ", quantidadecaloriacut);
 			 
-			printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarbcut);
-	        printf ("Voce deve ingerir %i g de proteina \n ", quantidadeprotcut);
-	        printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordcut);
-	        printf ("------------------------------------------------------------------------------ \n ");
+			 printf ("Voce deve ingerir %i g de carboidratos \n ", quantidadecarbcut);
+	         printf ("Voce deve ingerir %i g de proteina \n ", quantidadeprotcut);
+	         printf ("Voce deve ingerir %i g de gordura \n ", quantidadegordcut);
+	         printf ("------------------------------------------------------------------------------ \n ");
 			 
 			 
 			 break; 
@@ -174,7 +181,7 @@ switch (unidade){
 			 printf ("Erro");
 			 break;
 			 
-			 
+		 	 
 			
 	    }
 			
@@ -192,9 +199,9 @@ switch (unidade){
 			break; 
 		
 		default: 
-		   printf("comando n„o reconhecido, tente novamente");
+		   printf("comando n√£o reconhecido, tente novamente");
 		   break; 
-		   
+		break;    
 		}
 	
 	   
@@ -226,8 +233,8 @@ switch (unidade){
 	   int pesobr = (pesolbs*0.4536);
        int alturabr = (alturapes*30.48)+ (alturapolegada*2.54);
 	   
-	   printf("Digite seu nÌvel de atividade fÌsicas semanais:   \n");
-	   printf("Digite 1 - para SEDENTARIOS (pouco ou nenhum exercÌcio semanal ) \n "); 
+	   printf("Digite seu n√≠vel de atividade f√≠sicas semanais:   \n");
+	   printf("Digite 1 - para SEDENTARIOS (pouco ou nenhum exerc√≠cio semanal ) \n "); 
 	   printf("Digite 2 - para LEVEMENTE ATIVO (exercicio leve 1 a 3 dias por semana)\n"); 
 	   printf("Digite 3 - para MODERADAMENTE ATIVO (exercicio moderado ou esportes 3 a 5 dias por semana)\n"); 
 	   printf("Digite 4 - para ALTAMENTE ATIVO (exercicio pesado ou esportes 5 a 6 dias por semana)\n"); 
