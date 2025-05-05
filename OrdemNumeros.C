@@ -28,6 +28,7 @@ int main() {
     // Mostrar os números ordenados
     for(i = 0; i < 10; i++) {
         printf("%d ", numeros[i]);
+   
     }
 
     return 0;
