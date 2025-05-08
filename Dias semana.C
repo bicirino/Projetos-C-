@@ -1,4 +1,4 @@
-// Código simples envolvendo porém envolvendo funções 
+// Código simples porém envolvendo funções 
 
 #include <stdio.h>
 #include <locale.h>
