@@ -1,18 +1,19 @@
-// Projeto ChatBot psicólogo EM ANDAMENTO 
+// Projeto ChatBot psicólogo 
 
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
 
+
 int main (){ 
 	setlocale(LC_ALL,"Portuguese"); 
 
-	
-	char desabafo_user [1000]; 
-	
+	char desabafo_user [3000]; 
+
 	char resposta_user [7]; 
 	
 	char apelido [20]; 
+	
 	
 	
 	printf ("\nSeja Bem-vindo ao ChatBot psicólogo! Nossa conversa funcionará assim: Você me conta como você está se sentindo e eu te dou conselhos com embasamento científico para melhorar seu problema.\n");
@@ -29,18 +30,29 @@ int main (){
 		fflush (stdin); 
 	
 		printf ("\n\t->Vamos começar nossa conversa, %s ", apelido);
+		
 		printf ("\n\t->Me conta como você se sente: ");
-		fgets (desabafo_user, 1000, stdin);
+		fgets (desabafo_user, 3000, stdin);
 		fflush(stdin); 
 	
+		if (strstr(desabafo_user,"Triste") != NULL || strstr (desabafo_user, "triste") != NULL){
+			printf("\n\t->Poxa, me dói saber que você está triste :( ");
+			printf ("\n\t->Aqui vai um conselho: Tente achar a verdadeira alegria nas coisas mais simples da vida, como: Família, natureza, comidas, amigos, religião, e em muitas outras coisas. \n\t->Às vezes, lembrar de tudo que temos e de todos que estão conosco nos ajuda a nos manter alegre! Pare para pensar... O fato de você acordar mais um dia com saúde depois de uma boa noite de sono já é um GRANDE MOTIVO DE ALEGRIA!");
+			printf ("\n\t->Enfim,espero que você melhore! Saiba que estou sempre aqui pra te ajudar :)");
+		
+		}else if (strstr(desabafo_user,"Alegre") != NULL|| strstr(desabafo_user,"alegre") != NULL ){
+			printf ("\n\t->Fico muito feliz em saber que você está alegre!\n\t->Continue cultivando esse sentimento todos dias, e além de guardar essa alegria só pra você... seja tão alegre a ponto de transbordar essa alegria pros outros ");
+			printf ("\n\t->Mas fique atento! algumas pessoas não vão gostar de te ver sorrir, mas não se importe com isso! aproveite e conviva com pessoas que se alegram com você!");
+			printf("\n\t-> Enfim, espero que continua sendo desse jeito! O mundo precisa de cada vez mais pessoas felizes :)");
+		}
 	
-	
-	
+		
+		
+		
 	}else{ 
 		printf ("\t->Ops! Parece que você ainda não está pronto :(  \n\t->Volte quando se sentir à vontade!"); 
 	}
 	
 	
-
-  return 0; 
+	return 0; 
 }
