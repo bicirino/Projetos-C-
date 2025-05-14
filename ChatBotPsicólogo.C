@@ -1,3 +1,4 @@
+
 // Projeto ChatBot psicólogo EM ANDAMENTO 
 
 #include <stdio.h>
@@ -44,7 +45,14 @@ int main (){
 			printf ("\n\t->Fico muito feliz em saber que você está alegre!\n\t->Continue cultivando esse sentimento todos dias, e além de guardar essa alegria só pra você... seja tão alegre a ponto de transbordar essa alegria pros outros ");
 			printf ("\n\t->Mas fique atento! algumas pessoas não vão gostar de te ver sorrir, mas não se importe com isso! aproveite e conviva com pessoas que se alegram com você!");
 			printf("\n\t-> Enfim, espero que continua sendo desse jeito! O mundo precisa de cada vez mais pessoas felizes :)");
+		
+		}else if (strstr(desabafo_user, "Cansado") != NULL || strstr (desabafo_user,"cansado") != NULL ){ 
+			printf ("\n\t->Se sentir cansado realmente é algo muito comum, principalmente se você for uma pessoa adulta que possui mais responsabilidades");
+			printf("\n\t->Meu conselho: tente fazer coisas que te descansem em meio a sua rotina provavelmente caótica, como: olhar a natureza, fechar um pouco os olhos, tomar um banho quente e muitas outras coisas que te trazem paz ");
+			printf ("\n\t->Outro conselho é: evitar de fazer coisas que tomem ainda mais o seu tempo, como: se preocupar demais, trabalhar além do necessário e muitas outras");
+			printf("\n\t->De modo geral: tente achar a paz em meio à bagunça que você renovará suas forças");
 		}
+		
 	
 		
 		
