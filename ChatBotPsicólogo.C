@@ -51,7 +51,8 @@ int main (){
 			printf("\n\t->Meu conselho: tente fazer coisas que te descansem em meio a sua rotina provavelmente caótica, como: olhar a natureza, fechar um pouco os olhos, tomar um banho quente e muitas outras coisas que te trazem paz ");
 			printf ("\n\t->Outro conselho é: evitar de fazer coisas que tomem ainda mais o seu tempo, como: se preocupar demais, trabalhar além do necessário e muitas outras");
 			printf("\n\t->De modo geral: tente achar a paz em meio à bagunça que você renovará suas forças");
-		}
+		
+		}else if (strstr(desabafo_user,"Ansioso") != NULL || strstr (desabafo_user,"ansioso") != NULL){
 		
 	
 		
