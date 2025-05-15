@@ -1,4 +1,5 @@
 
+
 // Projeto ChatBot psicólogo EM ANDAMENTO 
 
 #include <stdio.h>
@@ -32,27 +33,44 @@ int main (){
 	
 		printf ("\n\t->Vamos começar nossa conversa, %s ", apelido);
 		
-		printf ("\n\t->Me conta como você se sente: ");
+		printf ("\n\t->Me conta como você se sente (fique à vontade, não precisa poupar palavras): ");
 		fgets (desabafo_user, 3000, stdin);
 		fflush(stdin); 
 	
-		if (strstr(desabafo_user,"Triste") != NULL || strstr (desabafo_user, "triste") != NULL){
+		if (strstr(desabafo_user,"Triste") != NULL || strstr (desabafo_user, "triste") != NULL || strstr(desabafo_user,"Tristeza") != NULL ||strstr(desabafo_user, "tristeza") != NULL){
 			printf("\n\t->Poxa, me dói saber que você está triste :( ");
 			printf ("\n\t->Aqui vai um conselho: Tente achar a verdadeira alegria nas coisas mais simples da vida, como: Família, natureza, comidas, amigos, religião, e em muitas outras coisas. \n\t->Às vezes, lembrar de tudo que temos e de todos que estão conosco nos ajuda a nos manter alegre! Pare para pensar... O fato de você acordar mais um dia com saúde depois de uma boa noite de sono já é um GRANDE MOTIVO DE ALEGRIA!");
 			printf ("\n\t->Enfim,espero que você melhore! Saiba que estou sempre aqui pra te ajudar :)");
 		
-		}else if (strstr(desabafo_user,"Alegre") != NULL|| strstr(desabafo_user,"alegre") != NULL ){
+		}else if (strstr(desabafo_user,"Alegre") != NULL|| strstr(desabafo_user,"alegre") != NULL || strstr(desabafo_user,"Alegria") != NULL || strstr(desabafo_user,"alegria") != NULL){
 			printf ("\n\t->Fico muito feliz em saber que você está alegre!\n\t->Continue cultivando esse sentimento todos dias, e além de guardar essa alegria só pra você... seja tão alegre a ponto de transbordar essa alegria pros outros ");
 			printf ("\n\t->Mas fique atento! algumas pessoas não vão gostar de te ver sorrir, mas não se importe com isso! aproveite e conviva com pessoas que se alegram com você!");
 			printf("\n\t-> Enfim, espero que continua sendo desse jeito! O mundo precisa de cada vez mais pessoas felizes :)");
 		
-		}else if (strstr(desabafo_user, "Cansado") != NULL || strstr (desabafo_user,"cansado") != NULL ){ 
+		}else if (strstr(desabafo_user, "Cansado") != NULL || strstr (desabafo_user,"cansado") != NULL || strstr(desabafo_user,"Cansaço") != NULL || strstr(desabafo_user,"cansaço") != NULL){ 
 			printf ("\n\t->Se sentir cansado realmente é algo muito comum, principalmente se você for uma pessoa adulta que possui mais responsabilidades");
 			printf("\n\t->Meu conselho: tente fazer coisas que te descansem em meio a sua rotina provavelmente caótica, como: olhar a natureza, fechar um pouco os olhos, tomar um banho quente e muitas outras coisas que te trazem paz ");
 			printf ("\n\t->Outro conselho é: evitar de fazer coisas que tomem ainda mais o seu tempo, como: se preocupar demais, trabalhar além do necessário e muitas outras");
 			printf("\n\t->De modo geral: tente achar a paz em meio à bagunça que você renovará suas forças");
 		
 		}else if (strstr(desabafo_user,"Ansioso") != NULL || strstr (desabafo_user,"ansioso") != NULL){
+			printf("\n\t->A ansiedade infelizmente tem sido um dos problemas psicológicos mais comuns atualmente, muito por causa de uma preocupação excessiva com o futuro");
+			printf("\n\t->Meu conselho: tente lembrar que a vida muitas vezes não vai acontecer da maneira que você quer, mas mesmo assim ela não deixa de ser boa e apaixonante!");
+			printf("\n\t->Às vezes o que você não quer que ocorra acontece e você vê que aquilo nem era ruim!"); 
+			printf("\n\t->Não se preocupe com coisas que não estão ao seu alcance! Pois isso é como tentar serrar serragem!");
+			printf("\n\t->De modo geral: entenda que a vida não pode ser 100% planejada, mas não ache isso uma coisa ruim, porque às vezes isso que faz ela ser maravilhosa! "); 
+		
+		}else if (strstr(desabafo_user,"Sozinho") != NULL || strstr(desabafo_user,"sozinho") != NULL || strstr(desabafo_user,"Solidão") != NULL || strstr(desabafo_user,"solidão") != NULL ){
+			printf ("\n\t->Em meio a uma rotina corrida e dias cheios, é normal se sentir sozinho! Mas a boa notícia é: essa solidão na maioria das vezes é FALSA! ");
+			printf("\n\t->Por exemplo: tente lembrar das pessoas que te amam, mesmo que elas não estejam presentes fisicamente com você ");
+			printf("\n\t->Enfim: veja além da sua rotina e enxergue além do seu ambiente físico, as pessoas que realmente se preocupam com você. Como: um amigo, parente ou até seu Dog! ");
+		
+		}else if (strstr(desabafo_user,"Estressado") != NULL || strstr(desabafo_user, "estressado") != NULL || strstr(desabafo_user,"Estresse") != NULL || strstr (desabafo_user,"estresse") != NULL ){
+			printf("\n\t->Esse é um dos sentimentos mais comuns da vida adulta! Às vezes você sente que tudo te estressa mais do que deveria, né? ");
+			printf("\n\t->E ainda tem o lance da pressão em tentar, mesmo nessas situações parecer bem. Quando você está nessa situação você deve aceitar que não está tudo bem! ");
+			printf("\n\t->Meu conselho: Não dá pra segurar o mundo e ainda sorrir o tempo todo. Desacelere! Se acalme! Vá no seu rítmo! ");
+		
+		}
 		
 	
 		
