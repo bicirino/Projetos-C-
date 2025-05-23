@@ -77,9 +77,9 @@ int main (){
 			printf("\n\t->Esse é um dos sentimentos mais pesados da vida adulta! Aquela sensação de perdição aparece do nada e gruda"); 
 			printf("\n\t->E o mundo parece exigir que você tenha tudo planejado, quando às vezes você só quer respirar em paz"); 
 			printf("\n\t->Meu conselho: Você não precisa ter todas as respostas agora. Caminhar no escuro também faz parte. Confie no processo!"); 
-		}
+		}else if (strstr(desabafo_user,"Perdido") != NULL || strstr(desabafo_user,"perdido") != NULL){ 
 		
-	
+	 } 
 		
 		
 		
