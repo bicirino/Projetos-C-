@@ -78,8 +78,12 @@ int main (){
 			printf("\n\t->E o mundo parece exigir que você tenha tudo planejado, quando às vezes você só quer respirar em paz"); 
 			printf("\n\t->Meu conselho: Você não precisa ter todas as respostas agora. Caminhar no escuro também faz parte. Confie no processo!"); 
 		}else if (strstr(desabafo_user,"Perdido") != NULL || strstr(desabafo_user,"perdido") != NULL){ 
-		
-	 } 
+			printf ("\n\t->Se sentir perdido é muito comum. Às vezes a vida parece como um labirinto, que é imprevisível e confusa"); 
+			printf("\n\t->Uma dica: tente organizar segmento por segmento da sua vida, não tudo de uma vez! \n\t->Por exemplo: em vez de tentar arrumar sua vida de uma vez, arrume primeiro apenas uma parte, depois outra, depois outra e assim por diante..."); 
+		 }else if (strstr(desabafo_user,"Morreu") != NULL || strstr(desabafo_user,"morreu") != NULL || strstr (desabafo_user,"Morte") != NULL || strstr(desabafo_user,"morte") != NULL){ 
+			printf("\n\t->Passar por morte é sempre um momento muito triste. A morte é um destino impossível de ser evitado e que todos, um dia, vamos passar"); 
+
+ 		 } 
 		
 		
 		
