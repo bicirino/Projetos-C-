@@ -80,10 +80,18 @@ int main (){
 		}else if (strstr(desabafo_user,"Perdido") != NULL || strstr(desabafo_user,"perdido") != NULL){ 
 			printf ("\n\t->Se sentir perdido é muito comum. Às vezes a vida parece como um labirinto, que é imprevisível e confusa"); 
 			printf("\n\t->Uma dica: tente organizar segmento por segmento da sua vida, não tudo de uma vez! \n\t->Por exemplo: em vez de tentar arrumar sua vida de uma vez, arrume primeiro apenas uma parte, depois outra, depois outra e assim por diante..."); 
-		 }else if (strstr(desabafo_user,"Morreu") != NULL || strstr(desabafo_user,"morreu") != NULL || strstr (desabafo_user,"Morte") != NULL || strstr(desabafo_user,"morte") != NULL){ 
+		 }else if (strstr(desabafo_user,"Morreu") != NULL || strstr(desabafo_user,"morreu") != NULL || strstr (desabafo_user,"Morte") != NULL || strstr(desabafo_user,"morte") != NULL || strstr(desabafo_user"faleceu") != NULL){ 
 			printf("\n\t->Passar por morte é sempre um momento muito triste. A morte é um destino impossível de ser evitado e que todos, um dia, vamos passar"); 
+			printf("\n\t->Acredito que não exista outra mensagem melhor do que lhe dizer: Sinto muito! \n\t->A morte deve ser encarada com uma coisa triste, porém inevitável"); 
+			printf("\n\t->Certamente, o seu colega que faleceu está descansando e em um lugar melhor!"); 
+			printf("\n\t->Pense assim...Como meu ente falecido gostaria que eu estivesse agora? O que ele gostaria que eu fizesse ? Qual lição ele gostaria que eu tivesse ?"); 
+			printf("\n\t->Certamente, seu ente não gostaria de te ver abalado e em tristeza profunda! Ele(a) gostaria de te ver feliz e seguindo sua vida com aprendizado!"); 
+			printf("\n\t->A maior lição que você pode aprender, com a morte de um ente querido, é que a vida é curta e nada dura pra sempre! aproveite-a da maneira correta para não se arrepender depois"); 
 
- 		 } 
+ 		 }else if (strstr(desabafo_user,"Demitido") != NULL || strstr(desabafo_user,"demitido") !=NULL || strstr(desabafo_user,"demissão") !=NULL ){ 
+
+
+		} 
 		
 		
 		
