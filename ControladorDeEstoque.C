@@ -1,7 +1,7 @@
 //// Controlador de estoque - EM CONSTRUÇÃO
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
+#include <locale.h>
 
 struct produto {
     int quantidade;
@@ -17,11 +17,15 @@ typedef struct produto produto;
 
 
 int main() {
-    setlocale(LC_ALL,"Portuguese");
+    setlocale(LC_ALL,"pt_BR");
 
     int i, n;
 
-    printf("Bem-Vindo ao controlador de estoque! Quantos produtos deseja cadastrar no controlador? ");
+    int res; 
+	
+	
+	
+	printf("Bem-Vindo ao controlador de estoque! Quantos produtos deseja cadastrar no controlador? ");
     scanf("%i", &n);
     getchar();
     
@@ -62,6 +66,19 @@ int main() {
         printf("  Quantidade: %d\n", produtos[i].quantidade);
         printf("  Descricao: %s\n", produtos[i].descricao);
     }
-
+	
+	
+	printf("\n______________________________________________________________________________"); 
+	
+	printf ("\nDigite 1 - para ALTERAR dados");
+	printf ("\nDigite 2 - para ADICIONAR produto"); 
+	printf ("\nDigite 3 - para MANTER estoque da maneira que está"); 
+	scanf("%i", &res); 
+	
+	switch res 
+	
+	
+	
+	
     return 0;
 }
