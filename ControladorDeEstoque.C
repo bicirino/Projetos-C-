@@ -20,8 +20,8 @@ int main() {
     int res, num; 
 	
 	printf("Bem-Vindo ao controlador de estoque! Quantos produtos deseja cadastrar no controlador? ");
-    scanf("%i", &n);
-    getchar();
+    	scanf("%i", &n);
+    	getchar();
     
 	produto produtos[n];
 
@@ -36,7 +36,7 @@ int main() {
         scanf("%f", &produtos[i].valor);
         
 		
-		printf("\n\t->Digite a quantidade em estoque do produto(%i): ", i + 1);
+	printf("\n\t->Digite a quantidade em estoque do produto(%i): ", i + 1);
         scanf("%i", &produtos[i].quantidade);
         getchar();
         
@@ -73,21 +73,21 @@ int main() {
 			
 			
 			printf("\n\t->Digite o nome do produto (%i): ", i + 1);
-        	fgets(produtos[i].nome, 21, stdin);
-        	fflush(stdin); 
+        		fgets(produtos[i].nome, 21, stdin);
+        		fflush(stdin); 
 			
 			printf("\n\t->Digite o valor do produto (%i): R$", i + 1);
-        	scanf("%f", &produtos[i].valor);
+        		scanf("%f", &produtos[i].valor);
 			
 			 printf("\n\t->Digite a quantidade em estoque do produto(%i): ", i + 1);
-        	scanf("%i", &produtos[i].quantidade);
-        	getchar();
+        		scanf("%i", &produtos[i].quantidade);
+        		getchar();
         
 
-        	printf("\n\t->Digite uma descrição para o produto(%i): ", i + 1);
-        	fgets(produtos[i].descricao, 200, stdin);
+        		printf("\n\t->Digite uma descrição para o produto(%i): ", i + 1);
+        		fgets(produtos[i].descricao, 200, stdin);
 		
-		break; 
+			break; 
 		
 		
 		case 2: 
@@ -100,29 +100,29 @@ int main() {
 			for (i=n; i<todos_produtos; i++){
 			
 				printf("\n\t->Digite o nome do produto (%i): ", i+1 );
-        		fgets(produtos[i].nome, 21, stdin);
-        		fflush(stdin); 
+        			fgets(produtos[i].nome, 21, stdin);
+        			fflush(stdin); 
         
 				printf("\n\t->Digite o valor do produto (%i): R$", i+1 );
-	        	scanf("%f", &produtos[i].valor);
+	        		scanf("%f", &produtos[i].valor);
 	        
 	
-	        	printf("\n\t->Digite a quantidade em estoque do produto(%i): ", i+1 );
-	        	scanf("%i", &produtos[i].quantidade);
-	        	getchar();
+	        		printf("\n\t->Digite a quantidade em estoque do produto(%i): ", i+1 );
+	        		scanf("%i", &produtos[i].quantidade);
+	        		getchar();
 	        
 	
-	        	printf("\n\t->Digite uma descrição para o produto(%i): ", i+1 );
-	        	fgets(produtos[i].descricao, 200, stdin);
+	        		printf("\n\t->Digite uma descrição para o produto(%i): ", i+1 );
+	        		fgets(produtos[i].descricao, 200, stdin);
 	    	
 				printf("\n--- Produtos Cadastrados ---\n");
-    			for (i = 0; i < todos_produtos; i++) {
-        		printf("Produto %d:\n", i + 1);
-        		printf("  Nome: %s\n", produtos[i].nome);
-        		printf("  Valor: %.2f\n", produtos[i].valor);
-        		printf("  Quantidade: %d\n", produtos[i].quantidade);
-        		printf("  Descricao: %s\n", produtos[i].descricao);
-    			}
+    				for (i = 0; i < todos_produtos; i++) {
+        				printf("Produto %d:\n", i + 1);
+        				printf("  Nome: %s\n", produtos[i].nome);
+        				printf("  Valor: %.2f\n", produtos[i].valor);
+        				printf("  Quantidade: %d\n", produtos[i].quantidade);
+        				printf("  Descricao: %s\n", produtos[i].descricao);
+    				}
 			
 			}
 		break;
