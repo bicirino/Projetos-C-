@@ -123,6 +123,7 @@ int main() {
 	
 	        		printf("\n\t->Digite uma descrição para o produto(%i): ", i+1 );
 	        		fgets(produtos[i].descricao, 200, stdin);
+	        		fflush(stdin); 
 	    	
 				printf("\n--- Produtos Cadastrados ---\n");
     				for (i = 0; i < todos_produtos; i++) {
@@ -155,7 +156,32 @@ int main() {
 	}
 	
 	
+	// Gerar arquivo - estoque 
+	FILE *arquivo = fopen("estoque.csv", "w"); 
 	
+	if (arquivo == NULL){ 
+		printf("Erro ao criar arquivo"); 
+		return 1; 
+	}
+	
+	
+	fprintf (arquivo, "Produto; Valor(R$); Quantidade;  Descrição\n"); 
+	
+	for (i=0; i<n; i++){ 
+		produtos[i].nome [strcspn(produtos[i].nome, "\n")] =0; 
+		produtos[i].descricao[strcspn(produtos[i].descricao, "\n")] = 0; 
+		
+		fprintf(arquivo, "\"%s\";\"%.2f\";\"%d\";\"%s\"\n",
+        	produtos[i].nome,
+        	produtos[i].valor,
+        	produtos[i].quantidade,
+        	produtos[i].descricao 
+        ); 
+	
+	}
+	
+	fclose (arquivo); 
+	printf("\nArquivo 'estoque.csv' gerado com sucesso!\n");
 	
     return 0;
 }
