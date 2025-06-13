@@ -1,8 +1,9 @@
-// Projeto - Simulador de investimentos - EM CONSTRUÇÃO 
+// Projeto - Simulador de investimentos 
 
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
+#include <math.h>
 
 int main (){
 	setlocale(LC_ALL,"Portuguese"); 
@@ -74,7 +75,12 @@ int main (){
 			scanf("%f", &capital); 
 			
 			if (modelo == 1 ){
-				montante = 
+				montante = capital *(1+(taxa/100)*tempo)+aporte*(((1+(taxa/100)*tempo)-1)/(taxa/100)); 
+				
+				printf ("\nO valor final da operação em %i meses será de: R$ %.2f ", tempo, montante); 
+			
+			}else if (modelo == 2){
+				montante = capital * pow(1 +taxa/100) , tempo); 
 			}
 			
 		
@@ -84,6 +90,26 @@ int main (){
 		
 		break; 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	return 0; 
 }
