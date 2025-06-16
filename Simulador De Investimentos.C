@@ -10,8 +10,11 @@ int main (){
 	
 	
 	int esc, modelo, tempo; 
-	char ResAporte; 
 	float taxa, capital, aporte,  montante; 
+	
+	float Selic, SelicDiaria; 
+	
+	
 	
 	
 	
@@ -31,6 +34,11 @@ int main (){
 	
 	switch (esc){
 		case 1: 
+			printf("\nDigite o valor atual da Taxa Selic (Desconsidere o símbolo de porcentagem): "); 
+			scanf("%f", &Selic*100); 
+			
+			SelicDiaria = pow((1+Selic), 1/252) - 1; 
+ 
 		
 		break; 
 		
@@ -60,13 +68,9 @@ int main (){
 			printf("\nDigite o tempo (em meses) da operação: ");
 			scanf("%i", &tempo); 
 			
-			printf("\nVocê fará algum aporte durante o investimento? (S ou N): "); 
-			scanf ("%s", &ResAporte); 
+			printf("\nQual aporte mensal do o investimento? (caso não haja aporte mensal digite '0'): "); 
+			scanf ("%s", &aporte); 
 			
-			if (ResAporte == 'S'){
-				printf("\nDigite o valor do aporte mensal: "); 
-				scanf ("%f", &aporte); 
-			}
 			
 			printf("\nDigite a taxa que será utilizada no rendimento(Desconsidere o símbolo de 'porcento): ");
 			scanf("%f", &taxa); 
@@ -80,7 +84,11 @@ int main (){
 				printf ("\nO valor final da operação em %i meses será de: R$ %.2f ", tempo, montante); 
 			
 			}else if (modelo == 2){
-				montante = capital * pow(1 +taxa/100) , tempo); 
+				montante = capital * pow(1 + taxa / 100.0, tempo) + aporte * ( (pow(1 + taxa / 100.0, tempo) - 1) / (taxa / 100.0) );
+			
+			
+			}else{
+				printf("O sistema escolhido não foi reconhecido"); 
 			}
 			
 		
