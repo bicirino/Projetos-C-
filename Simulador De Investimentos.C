@@ -10,12 +10,12 @@ int main (){
 	
 	
 	int esc, modelo, tempo; 
-	float taxa, capital, aporte,  montante; 
+	float taxa, capital, aporte, montante; 
 	
 	float Selic, SelicDiaria; 
+	int diasUteis;
 	
-	
-	
+	float Ipca; 
 	
 	
 	
@@ -37,12 +37,33 @@ int main (){
 			printf("\nDigite o valor atual da Taxa Selic (Desconsidere o símbolo de porcentagem): "); 
 			scanf("%f", &Selic*100); 
 			
-			SelicDiaria = pow((1+Selic), 1/252) - 1; 
+			SelicDiaria = pow((1+Selic), 1.0/252) - 1; 
  
+			printf("\nDigite o valor do capital da operação: ");
+			scanf ("%f", &capital); 
+			
+			printf("\nDigite o tempo (em meses)da operação? ");
+			scanf("%i", &tempo); 
+			
+			DiasUteis = tempo*21; 
+			
+			
+			montante = capital * pow ((1+SelicDiaria), DiasUteis); 
 		
 		break; 
 		
 		case 2: 
+			printf("\nDigite o IPCA anual: ");
+			scanf ("%f", &Ipca); 
+			
+			printf("\nDigite o valor do capital da operação:"); 
+			scanf("%f", &capital); 
+			
+			printf("\nDigite a taxa adicional fixa do regime: "); 
+			scanf("%f", &taxa); 
+		
+			montante = capital * pow((1 + Ipca) * (1 + taxa/100), tempo);
+		
 		
 		break;
 		
