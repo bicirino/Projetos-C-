@@ -18,6 +18,8 @@ int main (){
 	float Ipca; 
 	
 	
+	float Cdi; 
+	
 	
 	printf("Bem-vindo ao Simulador de Investimentos.Digite o número da opção que você deseja calcular: \n");
 	
@@ -76,6 +78,19 @@ int main (){
 		break; 
 		
 		case 5: 
+			printf("\nDigite o valor do capital: ");
+			scanf("%f", &capital); 
+			
+			printf("\nDigite o valor do CDI anual(desconsidere a porcentagem): "); 
+			scanf ("%f", &Cdi/100); 
+			
+			printf("\nDigite a taxa que a LCI/LCA paga(desconsidere a porcentagem): "); 
+			scanf("%f", &taxa); 
+			
+			printf("\nDigite o tempo, em meses, da operação: "); 
+			scanf("%i", &tempo);
+			
+			
 		
 		break; 
 		
