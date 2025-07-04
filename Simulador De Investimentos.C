@@ -4,6 +4,7 @@
 #include <string.h>
 #include <locale.h>
 #include <math.h>
+#include <stdlib>
 
 int main (){
 	setlocale(LC_ALL,"Portuguese"); 
@@ -15,10 +16,8 @@ int main (){
 	float Selic, SelicDiaria; 
 	int diasUteis;
 	
-	float Ipca; 
+	float Ipca, rendimento; 
 	
-	
-	float Cdi; 
 	
 	
 	printf("Bem-vindo ao Simulador de Investimentos.Digite o número da opção que você deseja calcular: \n");
@@ -27,9 +26,8 @@ int main (){
 	printf("\nDigite 2 - para TESOURO IPCA");
 	printf("\nDigite 3 - para POUPANÇA");
 	printf("\nDigite 4 - para CDB");
-	printf("\nDigite 5 - para LCI/LCA");
-	printf("\nDigite 6 - para RENDIMENTO PERSONALIZADO");
-	printf("\nDigite 7 - para SAIR");
+	printf("\nDigite 5 - para RENDIMENTO PERSONALIZADO");
+	printf("\nDigite 6 - para SAIR");
 	
 	printf("\n\t->");
 	scanf ("%i", &esc);
@@ -37,7 +35,8 @@ int main (){
 	switch (esc){
 		case 1: 
 			printf("\nDigite o valor atual da Taxa Selic (Desconsidere o símbolo de porcentagem): "); 
-			scanf("%f", &Selic*100); 
+			scanf("%f", &Selic); 
+			Selic = Selic*100; 
 			
 			SelicDiaria = pow((1+Selic), 1.0/252) - 1; 
  
@@ -52,6 +51,8 @@ int main (){
 			
 			montante = capital * pow ((1+SelicDiaria), DiasUteis); 
 		
+			printf("O valor do montante final em %i meses será de: R$ %.2f ", tempo, montante ); 
+		
 		break; 
 		
 		case 2: 
@@ -65,36 +66,60 @@ int main (){
 			scanf("%f", &taxa); 
 		
 			montante = capital * pow((1 + Ipca) * (1 + taxa/100), tempo);
-		
-		
+			
+			printf("O valor do montante final em %i meses será de: R$ %.2f ", tempo, montante ); 
+			
+			
+			
 		break;
 		
 		case 3: 
+			
+			printf ("\nDigite o capital do investimento: "); 
+			scanf("%f", &capital); 
+			
+			printf ("\nDigite o tempo em meses da operação: ");
+			scanf("%i", &tempo); 
+			
+			printf("\nDigite a taxa da operação: ");
+			scanf ("%f", &taxa); 
+			
+			printf ("\nDigite a taxa Selic mensal(desconsiderado o símbolo de porcentagem)");
+			scanf ("%f", &Selic);
+			
+			if (Selic>8.5){
+				rendimento = (0.5/100) + taxa; 
+			}else { 
+				rendimento = Selic*0.7; 
+			}
+		
+			montante = capital + rendimento; 
+		
+			printf("O valor do montante final em %i meses será de: R$ %.2f ", tempo, montante ); 
+		
 		
 		break;
 		
 		case 4:
-			
-		break; 
-		
-		case 5: 
-			printf("\nDigite o valor do capital: ");
+			printf("\nDigite o valor do capital da operação: ");
 			scanf("%f", &capital); 
 			
-			printf("\nDigite o valor do CDI anual(desconsidere a porcentagem): "); 
-			scanf ("%f", &Cdi/100); 
+			printf("\nDigite a taxa de juros da operação: ");
+			scanf("%f", &taxa);
+			taxa = taxa/100; 
 			
-			printf("\nDigite a taxa que a LCI/LCA paga(desconsidere a porcentagem): "); 
-			scanf("%f", &taxa); 
+			printf ("\nDigite o tempo, em meses, da operação: "); 
+			scanf("%i", &tempo); 
+					
+			montante = capital* pow((1+taxa), tempo); 
 			
-			printf("\nDigite o tempo, em meses, da operação: "); 
-			scanf("%i", &tempo);
+			printf("O montante da operação, no período de %i meses, é: R$ %.2f", tempo, montante); 
 			
-			
-		
 		break; 
 		
-		case 6: 
+		
+		
+		case 5: 
 			printf("\nDigite 1 - para utilização de JUROS SIMPLES");
 			printf("\nDigite 2 - para utilização de JUROS COMPOSTOS"); 
 			
@@ -105,7 +130,7 @@ int main (){
 			scanf("%i", &tempo); 
 			
 			printf("\nQual aporte mensal do o investimento? (caso não haja aporte mensal digite '0'): "); 
-			scanf ("%s", &aporte); 
+			scanf ("%f", &aporte); 
 			
 			
 			printf("\nDigite a taxa que será utilizada no rendimento(Desconsidere o símbolo de 'porcento): ");
@@ -127,33 +152,16 @@ int main (){
 				printf("O sistema escolhido não foi reconhecido"); 
 			}
 			
+			printf("\nO valor final da operação em %i meses será de: R$ %.2f ", tempo, montante);
 		
 		break; 
 		
-		case 7: 
+		case 6: 
+			printf("Programa encerrado!"); 
+			exit(0); 
 		
 		break; 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	return 0; 
 }
